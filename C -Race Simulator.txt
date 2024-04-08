@@ -1,0 +1,157 @@
+Race Simulator
+
+On your mark, get set, GO! Using structures and the rest of your C knowledge we’ll be creating a race simulator.
+
+First we’ll define our complex data types using structures. Then we’ll create some fun print functions to help update our audience. Finally, we’ll implement functions to help with the racing logic and start our race!
+
+1.
+We’ll start by creating our data types for the race.
+In the structures section, create a Race structure that has the following member variables:
+
+an int - numberOfLaps
+an int - currentLap
+a string - firstPlaceDriverName
+a string - firstPlaceRaceCarColor
+
+2.
+Next, in the structures section, create a RaceCar structure that has the following members variables:
+
+a string - driverName
+a string - raceCarColor
+an int - totalLapTime
+
+3.
+Since every race needs a fun introduction, let’s create one.
+
+In the print functions section, create the printIntro() function that prints a fun intro message for the race to the console.
+
+For example:
+
+Welcome to our main event digital race fans!
+I hope everybody has their snacks because we are about to begin!
+
+Go ahead and call printIntro() from main() to see its output in the console.
+
+4.
+Besides an introduction, a race always has a countdown!
+
+In the print functions section, create the printCountDown() function that prints a fun count down message for our racers.
+
+For example:
+
+Racers Ready! In...
+5
+4
+3
+2
+1
+Race!
+
+Go ahead and call printCountDown() from the main() function to see its output.
+
+5.
+Once the race does begin, we need to be able to inform the audience whose in the lead after every lap.
+
+In the print functions section, create the printFirstPlaceAfterLap() function that has a single Race type parameter named race.
+
+The function should access the race member variables and print a message announcing the current lap, the name of the first place driver, and the color of race car they’re driving.
+
+For example:
+After lap number 2
+First Place Is: George in the yellow race car!
+
+6.
+When the race ends, we need to congratulate the winner and tell the audience the race is over.
+
+In the print functions section, create the printCongratulation() function that has a Race type parameter named race.
+
+The function should access the race member variables and print a congratulation message with the name of the driver and the color of race car they were driving.
+
+For example:
+
+Let's all congratulate Cosmo in the orange race car for an amazing performance.
+It truly was a great race and everybody have a goodnight!
+
+7
+In order for our Race to be exciting, we need a way to calculate the time it takes a race car to complete a lap.
+
+In the logic functions section, below the print functions section, create the function calculateTimeToCompleteLap() that has no parameters and returns an int type.
+
+In the function, declare 3 int variables:
+
+speed
+acceleration
+nerves
+Initialize each to a random number between 1 and 3.
+
+return the summation of speed, acceleration, and nerves.
+
+ 8
+Now that we know how long it takes a race car to finish a lap, we need to be able to know the total time the race car has been racing.
+
+In the logic functions, create the function updateRaceCar() and, since we need to change the total lap time for the given race car, make sure that it has a single single RaceCar pointer parameter named raceCar and has no output.
+
+This function should find the time it took the raceCar to complete a lap and add it to the member variable totalLapTime.
+
+
+9.
+
+Lastly, we need to know who the new first place driver is and what car color they are driving.
+
+In the logic functions section, create the function updateFirstPlace() that has the following parameters:
+
+a Race pointer - race
+a RaceCar pointer - raceCar1
+a RaceCar pointer - raceCar2
+and has no output.
+
+This function should set the race member variables firstPlaceDriverName and firstPlaceRaceCarColor with:
+
+raceCar1 member variables driverName and raceCarColor if its totalLapTime is less than or equal to raceCar2 totalLapTime
+raceCar2 member variables driverName and raceCarColor, otherwise.
+
+
+10.
+Let’s put all our pieces together to create our digital race!
+
+Above main(), create the function startRace() that has 2 RaceCar pointer parameters:
+
+raceCar1
+raceCar2
+and returns no output.
+
+This function should initialize a Race type named race with the following member variable values:
+
+5 - numberOfLaps
+1 - currentLap
+"" - firstPlaceDriverName
+"" - firstPlaceRaceCarColor
+
+11
+
+Next we need to be able to simulate all the laps in the race, where, in every lap, each race car’s time is calculated and a first place driver and their race car color is announced.
+
+In startRace(), create a for loop that loops numberOfLaps in Race.
+
+Inside the loop:
+
+Update raceCar1 and raceCar2 totalLapTime member variable
+Updates the Race member variables firstPlaceDriverName and firstPlaceRaceCarColor
+Prints first place information
+
+12
+After all the laps are complete, we need to be able to announce the winners name and their race car color.
+
+In startRace(), after outside the for loop, print a congratulation message.
+
+
+13.
+Now that the race logic is complete, we can work on the entry point for the race simulation.
+
+In main(), declare and initialize 2 RaceCar data types.
+
+Then print out an intro message and begin the countdown.
+
+Lastly, call startRace() with pointers to the RaceCar types you created.
+
+Enjoy the race!
